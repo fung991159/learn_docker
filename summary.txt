@@ -1,5 +1,0 @@
-ch.4
-1. Can think of images as "class", container as "instance". Surely they are not the same
-2. inspect container shell with docker run -it
-3. git pull a directory, build an image and run it as container. pretty cool.
-
