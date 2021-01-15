@@ -1,5 +1,19 @@
 ch.4
-1. Can think of images as "class", container as "instance". Surely they are not the same
-2. inspect container shell with docker run -it
-3. git pull a directory, build an image and run it as container. pretty cool.
+    1. Can think of images as "class", container as "instance". Surely they are not the same
+    2. inspect container shell with docker run -it
+    3. git pull a directory, build an image and run it as container. pretty cool.
 
+ch.5 the docker engine
+    high-level view:
+    1. daemon : used to be a bulk of what "docker" is, continously being refactor and modularized.
+    REST API, authentication, orchestration, security, core networkingmodulized
+
+    2. containerd: manage container lifecycle operations - start|stop|pause|rm,
+    but it also involve in image push / pull overtime.
+    3. runc - single purpose: create containers
+
+    Now that all essential container function is pulled out from daemon,
+    it is possible to upgrade docker daemon version without stopping
+    any container.
+
+    rest of the chapter is just setting up key-pairs security stuff, skipped.
