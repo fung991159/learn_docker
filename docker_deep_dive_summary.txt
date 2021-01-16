@@ -17,3 +17,19 @@ ch.5 the docker engine
     any container.
 
     rest of the chapter is just setting up key-pairs security stuff, skipped.
+
+ch.6 docker image
+    - docker images is small and fast because only necessary component is in the image.
+    - it is build with layer, say layer for OS, a layer for python, and a layer for source code.
+    - linux images tend to be a lot smaller than windows operations
+    - command; docker images ls/rm/pull/push
+
+ch.7 docker container
+    - it is best practice to docker stop > docker rm, then docker rm -f. So the container can stop cleanly.
+    - data is not stored in the container, instead it is store in host with docker volume. Data will not be loss
+    by stopping container, but rm it.
+    - restart policy:
+        a. always: always restart unless explicity stopped
+        b. unless-stopped.  smae as always, but will not restart when daemon restarts.
+        c. on -failure: restart if container exist with non-zero exit code
+
