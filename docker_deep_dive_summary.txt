@@ -33,3 +33,22 @@ ch.7 docker container
         b. unless-stopped.  smae as always, but will not restart when daemon restarts.
         c. on -failure: restart if container exist with non-zero exit code
 
+ch.8 Containerizing an app
+    - Dockerfile: starting point, tell docker how to build an image
+        INSTRUCTION names are not case sensitive, but should be in UPPERCASE as best practice.
+            1. instruction that create new layer. i.e. FROM, RUN, COPY: adding content su as files / programs
+            2. adding metadata only: adding instructions on how to run the application
+    - Docker image build
+    - Docker login and push to dockerhub, each image must be tagged to be pushed.
+    - docker image smaller the better, big image is hard to build and maintain, also provide more surface for attack.
+    - it is a best practice to include multiple commands as part ofa a RUn isntruction (using && and \)
+    - Multistage build: single docker file with multiple "FROM"
+
+    best practices:
+        1. docker can reuse cached layer for build. But when it comes to step that is a "cache miss", all the rest of the command in
+        Dockerfile will be build as new. So try to put variable section at the back of the Dockerfile.
+        2. Squash image comes with pro and con. Pro is there is less layer images to work on. But Cons is squashed image won't be able to share layers with others,
+        hence size is larger.
+    command:
+        1. docker image history <image:tag>: show how many layer are built
+    
