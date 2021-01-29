@@ -1,0 +1,2 @@
+1. to stop all container, running or stopped
+docker container stop $(docker ps -aq)
